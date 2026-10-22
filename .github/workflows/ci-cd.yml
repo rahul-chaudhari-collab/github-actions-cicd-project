@@ -1,4 +1,3 @@
-```yaml
 name: My First CI Pipeline
 
 on:
@@ -28,4 +27,3 @@ jobs:
         run: |
           grep -q "Hello DevOps!" index.html
           echo "Website test successful"
-```
