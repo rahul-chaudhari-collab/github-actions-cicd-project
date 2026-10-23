@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout CoDe
         uses: actions/checkout@v4
 
       - name: Check Project Files
