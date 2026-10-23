@@ -1,29 +1,20 @@
-name: My First CI Pipeline
+name: Docker Build Pipeline
 
 on:
   push:
     branches:
       - main
 
-  workflow_dispatch:
-
 jobs:
-  build-and-test:
+  docker-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout CoDe
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Check Project Files
-        run: ls -la
+      - name: Build Docker Image
+        run: docker build -t devops-web:v1 .
 
-      - name: Build Check
-        run: |
-          test -f index.html
-          echo "Build check successful"
-
-      - name: Test Website
-        run: |
-          grep -q "Hello DevOps!" index.html
-          echo "Website test successful"
+      - name: Show Docker Images
+        run: docker images
